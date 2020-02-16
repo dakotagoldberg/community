@@ -12,11 +12,11 @@ we will start by working to integrate the snapchat api into our app.
 
 in the repository:
 
-  npm start
+  `npm start`
 
 or
   
-  expo start
+  `expo start`
   
 ## additional notes
 
