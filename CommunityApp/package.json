@@ -8,6 +8,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@react-native-community/masked-view": "^0.1.6",
     "@react-navigation/bottom-tabs": "^5.0.5",
     "@react-navigation/native": "^5.0.0-alpha.35",
@@ -19,6 +22,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-dotenv": "^0.2.0",
     "react-native-gesture-handler": "^1.6.0",
+    "react-native-progress": "^4.0.3",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.0.0-beta.4",
     "react-native-web": "~0.11.7",

@@ -4,6 +4,7 @@ import { ScrollView, Image, View, Text, StyleSheet, Button } from 'react-native'
 import { auth } from 'firebase';
 import { connect } from 'react-redux'
 import Firebase from '../config/Firebase';
+// import * as Progress from 'react-native-progress';
 // import { initialWindowSafeAreaInsets } from 'react-native-safe-area-context';
 
 
@@ -23,9 +24,12 @@ export default class Profile extends React.Component {
                 <ScrollView  >
                 <Text style={styles.heading}>Home</Text>
                 <View style={styles.userOverview}>
-                    <View style={styles.nextEvent}></View>
-                    {/* <Image source={{uri: require('../assets/img/bit-profile.png'), width: '40%', height: '40%'}}></Image> */}
+                    <View style={styles.nextEvent}>
+                    <Image source={{uri: "https://github.com/dakotagoldberg/community/blob/master/CommunityApp/assets/img/bit-profile.png?raw=true", width: 70, height: 90}}></Image>
                     <Text style={styles.userName}>Richard Platt</Text>
+                    {/* <Progress.Bar progress={0.3} width={200} /> */}
+
+                    </View>
                 </View>
                 <View style={styles.nextEvent}>
                     <Image style={styles.eventImage} source={{uri: "https://images.unsplash.com/photo-1553755322-56baa43a31d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80", width: '40%', height: '100%'}}></Image>
@@ -146,7 +150,7 @@ const styles = StyleSheet.create({
     },
     userName: {
         fontWeight: '700',
-        fontSize: 36,
+        fontSize: 30,
         display: 'flex',
         margin: 20,
         marginTop: 25,

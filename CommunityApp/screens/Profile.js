@@ -15,8 +15,8 @@ class Profile extends React.Component {
         // confirm(this.props.user.fullName);
         return (
             <View style={styles.container}>
-                <Text>Profile Screen</Text>
-                <Text>{this.props.user.age}</Text>
+                <Text>My Account</Text>
+                <Text>{this.props.user.email}</Text>
                 <Button title='Logout' onPress={this.handleSignout} />
             </View>
         )
