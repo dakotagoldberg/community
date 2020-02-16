@@ -7,6 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import SwitchNavigator from './navigation/SwitchNavigator';
 import Communities from './screens/Communities';
 import Events from './screens/Events';
+import Home from './screens/Home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -26,9 +27,10 @@ class App extends React.Component {
             <Provider store={store}>
                 <NavigationContainer>
                     <Tab.Navigator>
+                        <Tab.Screen name="Home" component={Home} />
                         <Tab.Screen name="Communities" component={Communities} />
                         <Tab.Screen name="Events" component={Events} />
-                        <Tab.Screen name="SwitchNavigator" component={SwitchNavigator} />
+                        <Tab.Screen name="Account" component={SwitchNavigator} />
                     </Tab.Navigator>
                 </NavigationContainer>
             </Provider>
