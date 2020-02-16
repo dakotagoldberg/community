@@ -1,29 +1,49 @@
-// import React from 'react'
-// import Signup from './screens/Signup'
+import * as React from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native'
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
 
-// export default class App extends React.Component {
-//     render() {
-//         return <Signup />
-//     }
-// }
+import SwitchNavigator from './navigation/SwitchNavigator';
+import Communities from './screens/Communities';
+import Events from './screens/Events';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-import React from 'react'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import thunkMiddleware from 'redux-thunk'
-
-import SwitchNavigator from './navigation/SwitchNavigator'
-import reducer from './reducers'
+import reducer from './reducers';
+// import { createAppContainer } from 'react-navigation';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducer, middleware)
 
-export default class App extends React.Component {
+const Tab = createBottomTabNavigator();
+
+class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <SwitchNavigator />
+                <NavigationContainer>
+                    <Tab.Navigator>
+                        <Tab.Screen name="Communities" component={Communities} />
+                        <Tab.Screen name="Events" component={Events} />
+                        <Tab.Screen name="SwitchNavigator" component={SwitchNavigator} />
+                    </Tab.Navigator>
+                </NavigationContainer>
             </Provider>
         )
     }
 }
+
+export default App;
+
+// class HomeScreen extends React.Component {  
+//     render() {  
+//         return (  
+//             <View style={styles.container}>  
+//                 <Text>Home Screen</Text>  
+//             </View>  
+//         );  
+//     }  
+// }  
