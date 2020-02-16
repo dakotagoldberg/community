@@ -11,11 +11,12 @@ class Profile extends React.Component {
     }
 
     render() {
-        
+
+        // confirm(this.props.user.fullName);
         return (
             <View style={styles.container}>
                 <Text>Profile Screen</Text>
-                <Text>{this.props.user.email}</Text>
+                <Text>{this.props.user.age}</Text>
                 <Button title='Logout' onPress={this.handleSignout} />
             </View>
         )
@@ -25,7 +26,7 @@ class Profile extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#f2f2f2',
         alignItems: 'center',
         justifyContent: 'center'
     }

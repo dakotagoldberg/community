@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'space-between',
         // marginLeft: 50,
 
-        // backgroundColor: '#fff',
+        backgroundColor: '#f2f2f2',
         alignItems: 'stretch',
         width: 'auto',
         justifyContent: 'center'
@@ -64,12 +64,13 @@ const styles = StyleSheet.create({
         width: '85%',
         height: 80,
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#00bfff',
         textAlignVertical: 'auto',
         justifyContent: 'center',
         alignSelf: 'center',
         marginVertical: 5,
         // textAlign: 'center',
+        borderRadius: 10,
     },
     heading: {
         fontWeight: 'bold',

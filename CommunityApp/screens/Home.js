@@ -4,24 +4,43 @@ import { ScrollView, Image, View, Text, StyleSheet, Button } from 'react-native'
 import { auth } from 'firebase';
 import { connect } from 'react-redux'
 import Firebase from '../config/Firebase';
+// import { initialWindowSafeAreaInsets } from 'react-native-safe-area-context';
+
 
 export default class Profile extends React.Component {
+    
     render() {
         const user = Firebase.auth().currentUser;
-
+        // var text = "";
+        // if (user) {
+        //     text = "Richard Platt";
+        // }
+        // else {
+        //     text = "Log in to see your personalized stats!";
+        // }
         return (
             <View style={styles.container}>
                 <ScrollView  >
                 <Text style={styles.heading}>Home</Text>
-                <View style={{...styles.content,...styles.userOverview}}>
-                    {/* <Text>{user.email}</Text> */}
+                <View style={styles.userOverview}>
+                    <View style={styles.nextEvent}></View>
+                    {/* <Image source={{uri: require('../assets/img/bit-profile.png'), width: '40%', height: '40%'}}></Image> */}
+                    <Text style={styles.userName}>Richard Platt</Text>
                 </View>
-                <View style={styles.content}>
-                    <Text>Event Preview</Text>
+                <View style={styles.nextEvent}>
+                    <Image style={styles.eventImage} source={{uri: "https://images.unsplash.com/photo-1553755322-56baa43a31d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80", width: '40%', height: '100%'}}></Image>
+                    <View>
+                        <Text style={styles.eventDate}>Feb 19</Text>
+                        <Text style={styles.eventTitle}>Coffee Chats: Our Forests</Text>
+                        <Text style={styles.eventHost}>Hosted by <Text style={{fontWeight: '700'}}>Starbucks</Text></Text>
+
+                    </View>
+                    
+
                 </View>
-                <View style={styles.content}>
+                {/* <View style={styles.content}>
                     <Text>Communities Preview</Text>
-                </View>
+                </View> */}
           </ScrollView>
             </View>
           
@@ -38,7 +57,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'space-between',
         // marginLeft: 50,
 
-        backgroundColor: '#fbfbfb',
+        backgroundColor: '#f2f2f2',
         alignItems: 'stretch',
         width: 'auto',
         justifyContent: 'center'
@@ -49,7 +68,7 @@ const styles = StyleSheet.create({
         width: '85%',
         height: 200,
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#fbfbfb',
         textAlignVertical: 'auto',
         justifyContent: 'center',
         alignSelf: 'center',
@@ -69,9 +88,70 @@ const styles = StyleSheet.create({
         marginTop: 15,
     },
     userOverview: {
-        backgroundColor: '#eeeeee',
-        
-    }
+        width: '85%',
+        height: 200,
+        alignItems: 'center',
+        backgroundColor: '#fbfbfb',
+        textAlignVertical: 'auto',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        marginVertical: 10,
+        // textAlign: 'center',
+        borderRadius: 10,
+    },
+    nextEvent: {
+        flex: 1,
+        flexDirection: 'row',
+        width: '85%',
+        height: 200,
+        alignItems: 'center',
+        backgroundColor: '#fbfbfb',
+        textAlignVertical: 'auto',
+        // justifyContent: 'center',
+        alignSelf: 'center',
+        marginVertical: 10,
+        // textAlign: 'center',
+        borderRadius: 10,
+        // flexWrap: 'wrap',
+    },
+    eventImage: {
+        alignSelf: 'flex-start',
+        margin: '0%',
+        // marginVertical: 'auto',
+        // borderRadius: 10,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+    },
+    eventTitle: {
+        fontWeight: '500',
+        fontSize: 24,
+        display: 'flex',
+        margin: 20,
+        width: "50%",
+        marginVertical: -10,
+    },
+    eventDate: {
+        fontWeight: 'bold',
+        fontSize: 38,
+        display: 'flex',
+        margin: 20,
+    },
+    eventHost: {
+        fontWeight: '300',
+        fontSize: 16,
+        display: 'flex',
+        margin: 20,
+        marginTop: 25,
+        width: "50%",
+    },
+    userName: {
+        fontWeight: '700',
+        fontSize: 36,
+        display: 'flex',
+        margin: 20,
+        marginTop: 25,
+        // width: "50%",
+    },
 })
 
 // const mapStateToProps = state => {
