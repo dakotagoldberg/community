@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { Image, View, Text, StyleSheet, Button } from 'react-native'
 import { connect } from 'react-redux'
 import Firebase from '../config/Firebase'
 
@@ -18,6 +18,11 @@ class Profile extends React.Component {
                 <Text>My Account</Text>
                 <Text>{this.props.user.email}</Text>
                 <Button title='Logout' onPress={this.handleSignout} />
+                <View>
+
+                    <Image style={styles.logo} source={{uri: "https://github.com/dakotagoldberg/community/blob/master/CommunityApp/assets/img/logo-color.png?raw=true", width: 75, height: 75}}></Image>
+
+                </View>
             </View>
         )
     }
@@ -29,6 +34,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    logo: {
+        margin: 80,
+        alignSelf: 'center',
     }
 })
 

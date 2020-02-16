@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native'
+import { Image, View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -33,6 +33,11 @@ class Signup extends React.Component {
                 <TouchableOpacity style={styles.button} onPress={this.handleSignUp}>
                     <Text style={styles.buttonText}>Signup</Text>
                 </TouchableOpacity>
+                <View>
+
+                    <Image style={styles.logo} source={{uri: "https://github.com/dakotagoldberg/community/blob/master/CommunityApp/assets/img/logo-color.png?raw=true", width: 75, height: 75}}></Image>
+
+                </View>
             </View>
         )
     }
@@ -72,6 +77,10 @@ const styles = StyleSheet.create({
     },
     buttonSignup: {
         fontSize: 12
+    },
+    logo: {
+        margin: 80,
+        alignSelf: 'center',
     }
 })
 

@@ -58,6 +58,12 @@ export default class Profile extends React.Component {
                         <Text style={styles.eventTitle}>Edu. Inequality</Text>
                     </View>
                 </View>
+
+                <View>
+
+                    <Image style={styles.logo} source={{uri: "https://github.com/dakotagoldberg/community/blob/master/CommunityApp/assets/img/logo-color.png?raw=true", width: 75, height: 75}}></Image>
+
+                </View>
                 
           </ScrollView>
             </View>
@@ -140,4 +146,8 @@ const styles = StyleSheet.create({
         // width: "50%",
         marginVertical: -10,
     },
+    logo: {
+        margin: 80,
+        alignSelf: 'center',
+    }
 })

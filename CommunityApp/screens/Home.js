@@ -59,6 +59,13 @@ export default class Home extends React.Component {
                 {/* <View style={styles.content}>
                     <Text>Communities Preview</Text>
                 </View> */}
+
+                <View>
+
+                    <Image style={styles.logo} source={{uri: "https://github.com/dakotagoldberg/community/blob/master/CommunityApp/assets/img/logo-color.png?raw=true", width: 75, height: 75}}></Image>
+
+                </View>
+
           </ScrollView>
             </View>
 
@@ -173,6 +180,10 @@ const styles = StyleSheet.create({
         marginTop: 25,
         // width: "50%",
     },
+    logo: {
+        margin: 80,
+        alignSelf: 'center',
+    }
     
 })
 

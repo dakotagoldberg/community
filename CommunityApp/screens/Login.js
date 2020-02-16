@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, TextInput, StyleSheet, TouchableOpacity, Text, Button } from 'react-native'
+import { Image, View, TextInput, StyleSheet, TouchableOpacity, Text, Button } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateEmail, updatePassword, login, getUser } from '../actions/user'
@@ -48,7 +48,13 @@ class Login extends React.Component {
                     title="Don't have an account yet? Sign up"
                     onPress={() => this.props.navigation.navigate('Signup')}
                 />
+                <View>
+
+<Image style={styles.logo} source={{uri: "https://github.com/dakotagoldberg/community/blob/master/CommunityApp/assets/img/logo-color.png?raw=true", width: 75, height: 75}}></Image>
+
+</View>
             </View>
+            
         )
     }
 }
@@ -87,6 +93,10 @@ const styles = StyleSheet.create({
     },
     buttonSignup: {
         fontSize: 12
+    },
+    logo: {
+        margin: 80,
+        alignSelf: 'center',
     }
 })
 
