@@ -4,6 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../screens/Login'
 import Signup from '../screens/Signup'
 import Profile from '../screens/Profile'
+import Home from '../screens/Home'
+import Events from '../screens/Events'
+import Commumnities from '../screens/Communities'
 
 let Stack = createStackNavigator();
 
@@ -15,7 +18,14 @@ const SwitchNavigator = function () {
     </Stack.Navigator>
 }
 
-//   AppRegistry.registerComponent('SimpleApp', () => SimpleApp);
+const ExtraTabNavigation = function () {
+    return <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Events" component={Events} />
+        <Stack.Screen name="Communities" component={Communities} />
+    </Stack.Navigator>
+}
+
 
 
 export default SwitchNavigator

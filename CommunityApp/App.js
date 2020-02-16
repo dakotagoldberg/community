@@ -10,6 +10,7 @@ import Events from './screens/Events';
 import Home from './screens/Home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import reducer from './reducers';
 // import { createAppContainer } from 'react-navigation';
@@ -20,6 +21,8 @@ const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducer, middleware)
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
 
 class App extends React.Component {
     render() {
@@ -33,10 +36,16 @@ class App extends React.Component {
                         <Tab.Screen name="Account" component={SwitchNavigator} />
                     </Tab.Navigator>
                 </NavigationContainer>
+                {/* <NavigationContainer>
+                <Stack.Navigator>
+                        <Stack.Screen name="Home" component={Home} />
+                    </Stack.Navigator>
+                </NavigationContainer> */}
             </Provider>
         )
     }
 }
+
 
 export default App;
 

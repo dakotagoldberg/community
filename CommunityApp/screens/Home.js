@@ -4,14 +4,23 @@ import { ScrollView, Image, View, Text, StyleSheet, Button } from 'react-native'
 import { auth } from 'firebase';
 import { connect } from 'react-redux'
 import Firebase from '../config/Firebase';
+import ExtraTabNavigation from '../navigation/SwitchNavigator';
 // import * as Progress from 'react-native-progress';
 // import { initialWindowSafeAreaInsets } from 'react-native-safe-area-context';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
 
+export default class Home extends React.Component {
 
-export default class Profile extends React.Component {
-    
     render() {
         const user = Firebase.auth().currentUser;
+        
+            // if (user) {
+            //     alert(user.email);
+            // }
+        
+        
+        
         // var text = "";
         // if (user) {
         //     text = "Richard Platt";
@@ -20,6 +29,7 @@ export default class Profile extends React.Component {
         //     text = "Log in to see your personalized stats!";
         // }
         return (
+            
             <View style={styles.container}>
                 <ScrollView  >
                 <Text style={styles.heading}>Home</Text>
@@ -37,20 +47,27 @@ export default class Profile extends React.Component {
                         <Text style={styles.eventDate}>Feb 19</Text>
                         <Text style={styles.eventTitle}>Coffee Chats: Our Forests</Text>
                         <Text style={styles.eventHost}>Hosted by <Text style={{fontWeight: '700'}}>Starbucks</Text></Text>
-
+                        
+                        {/* <Button
+                    title="Don't have an account yet? Sign up"
+                    onPress={() => testUser()}
+                /> */}
                     </View>
                     
-
+                    
                 </View>
                 {/* <View style={styles.content}>
                     <Text>Communities Preview</Text>
                 </View> */}
           </ScrollView>
             </View>
+
+            
           
       );
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -156,6 +173,7 @@ const styles = StyleSheet.create({
         marginTop: 25,
         // width: "50%",
     },
+    
 })
 
 // const mapStateToProps = state => {
