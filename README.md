@@ -4,9 +4,9 @@
 
 ## our mission
 
-we aim to create an accessible community and social service culture for the younger, rising generations through a framework of digital "ripl"s promoting community or corporate-sponsored service or engangement events spread through our modern day's greatest wildfire: social media.
+we aim to create an accessible community and social service culture for the younger, rising generations through a framework of digital "ripl"s intented to promote community and corporate-sponsored service or engangement events spread through modern day's greatest wildfire: social media.
 
-we will start by working to integrate the snapchat api into our app.
+we will start by working to integrate the snapchat api into our app, and we can expand from there.
 
 ## how to run
 
